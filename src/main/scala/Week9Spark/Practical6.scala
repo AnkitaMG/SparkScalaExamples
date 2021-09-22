@@ -9,7 +9,7 @@ object Practical6 extends App{
 
   val sc = new SparkContext("local[*]", "averageconnections")
 
-  val inputfile = sc.textFile("src/main/resources/Week9Spark/friendsdata.csv")
+  val inputfile = sc.textFile("src/main/resources/InputFile/Week9Spark/friendsdata.csv")
 
   val requireddata = inputfile.map (x => (x.split("::")(2).toInt,x.split("::")(3).toInt))
 

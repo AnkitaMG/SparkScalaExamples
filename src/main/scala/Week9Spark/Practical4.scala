@@ -9,7 +9,7 @@ object Practical4 extends App {
 
   val sc = new SparkContext("local[*]","customerorders")
 
-  val rdd1 = sc.textFile("src/main/resources/Week9Spark/customerorders.csv")
+  val rdd1 = sc.textFile("src/main/resources/InputFile/Week9Spark/customerorders.csv")
 
   val rdd2 = rdd1.map(x=> (x.split(",")(0), x.split(",")(2).toFloat))
 

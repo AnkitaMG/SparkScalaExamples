@@ -9,7 +9,7 @@ object Practical5 extends App {
 
   val sc = new SparkContext("local[*]", "movieratings")
 
-  val inputfile = sc.textFile("src/main/resources/Week9Spark/moviedata.data")
+  val inputfile = sc.textFile("src/main/resources/InputFile/Week9Spark/moviedata.data")
 
   val ratinglist = inputfile.map(x =>x.split("\t")(2))
   //println("Manral printing rating list")

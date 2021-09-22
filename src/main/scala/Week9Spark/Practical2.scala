@@ -10,7 +10,7 @@ object Practical2 extends App {
   //val spark = SparkSession.builder.appName(name = "WordCount").config("spark.master","local").getOrCreate()
   val sc = new SparkContext("local[*]","wordcount")
 
-  val rdd1 = sc.textFile("src/main/resources/Week9Spark/search_data.txt")
+  val rdd1 = sc.textFile("src/main/resources/InputFile/Week9Spark/search_data.txt")
 
   val rdd2 = rdd1.flatMap(x => x.split(" "))
 
