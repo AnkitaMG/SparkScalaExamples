@@ -3,13 +3,13 @@ package Week10Spark
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
 
-object Week10RealTimeExample extends App{
+object RealTimeExample extends App{
 
   Logger.getLogger("org").setLevel(Level.ERROR)
 
   val sc = new SparkContext("local[*]", "realtimeexample")
 
-  val inputFile = sc.textFile("C:/Users/AnkitaM/Documents/BIGDATA/Week10Spark/bigdatacampaigndata.csv")
+  val inputFile = sc.textFile("src/main/resources/InputFile/Week10Spark/bigdatacampaigndata.csv")
 
   val requireData = inputFile.map(x => (x.split(",")(10).toFloat,  x.split(",")(0)))
 

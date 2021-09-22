@@ -3,7 +3,7 @@ package Week10Spark
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
 
-object Week10ListParallelizeEx extends App {
+object ListParallelizeEx extends App {
 
   Logger.getLogger("org").setLevel(Level.ERROR)
 

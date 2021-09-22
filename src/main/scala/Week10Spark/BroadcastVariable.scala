@@ -5,11 +5,11 @@ import org.apache.spark.SparkContext
 
 import scala.io.Source
 
-object Week10BroadcastVariable extends App {
+object BroadcastVariable extends App {
 
   def loadBoringWords(): Set[String] ={
     var boringWords:Set[String] =Set()
-    val lines = Source.fromFile("C:/Users/AnkitaM/Documents/BIGDATA/Week10Spark/boringwords.txt").getLines()
+    val lines = Source.fromFile("src/main/resources/InputFile/Week10Spark/boringwords.txt").getLines()
 
     for (line <- lines) {
       boringWords += line

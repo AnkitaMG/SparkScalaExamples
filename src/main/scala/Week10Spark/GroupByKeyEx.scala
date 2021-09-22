@@ -3,13 +3,13 @@ package Week10Spark
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
 
-object Week10GroupByKeyEx extends App {
+object GroupByKeyEx extends App {
 
   Logger.getLogger("org").setLevel(Level.ERROR)
 
   val sc = new SparkContext("local[*]", "GroupByKeyEx")
 
-  val rdd1 = sc.textFile("C:/Users/AnkitaM/Documents/BIGDATA/Week10Spark/bigLog.txt")
+  val rdd1 = sc.textFile("src/main/resources/InputFile/Week10Spark/bigLog.txt")
   //rdd1.collect.foreach(println)
   val rdd2 = rdd1.map(x => {
     val fields = x.split(":")

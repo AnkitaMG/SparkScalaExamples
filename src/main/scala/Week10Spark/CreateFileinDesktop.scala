@@ -3,13 +3,13 @@ package Week10Spark
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
 
-object Week10CreateFileinDesktop extends App{
+object CreateFileinDesktop extends App{
 
   Logger.getLogger("org").setLevel(Level.ERROR)
 
   val sc = new SparkContext("local[*]", "CreateOutputFile")
 
-  val rdd1 = sc.textFile("C:/Users/AnkitaM/Documents/BIGDATA/Week9Spark/customerorders.csv")
+  val rdd1 = sc.textFile("src/main/resources/InputFile/Week9Spark/customerorders.csv")
 
   val rdd2 = rdd1.map(x => (x.split(",")(0),  x.split(",")(2).toFloat))
 
@@ -21,6 +21,6 @@ object Week10CreateFileinDesktop extends App{
 
   val rdd6 = rdd5.map (x => (x._1, x._2 *2))
 
-  rdd6.saveAsTextFile("C:/Users/AnkitaM/Documents/BIGDATA/Week9Spark/spark_output3")
+  rdd6.saveAsTextFile("src/main/resources/OutputFile/Week9Spark/spark_output3")
 
 }
